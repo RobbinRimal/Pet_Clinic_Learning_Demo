@@ -6,7 +6,7 @@ import java.util.Set;
 
 public interface crudService<T, ID>{
 Set<T> findAll();
-    Vet save(T t);
+    T save(T object);
 
 
     T findById(long ID);
