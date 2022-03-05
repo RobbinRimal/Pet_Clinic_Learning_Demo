@@ -21,29 +21,18 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
-
-
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<configuration>
-
-				</configuration>
-			</plugin>
-
 		</plugins>
 	</build>
 
-	<scm>
-		<developerConnection>scm:github:https://github.com/RobbinRimal/petfuckme.git</developerConnection>
-	</scm>
+
+
+
 
 
 </project>
