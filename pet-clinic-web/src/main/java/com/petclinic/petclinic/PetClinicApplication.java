@@ -8,7 +8,7 @@ public class PetClinicApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PetClinicApplication.class, args);
-		System.out.println("fuck you");
+		System.out.println("up and running");
 
 	}
 
