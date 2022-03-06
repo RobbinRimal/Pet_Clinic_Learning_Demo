@@ -1,7 +1,9 @@
 package com.petclinic.petclinic.model;
 
-import java.time.LocalDate;
+import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+@Component
 public class pet extends BaseEntity {
     private  Owner owner;
     private petType petType;

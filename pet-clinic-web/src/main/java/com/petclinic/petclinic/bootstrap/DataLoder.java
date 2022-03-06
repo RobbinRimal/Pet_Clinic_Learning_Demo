@@ -8,13 +8,16 @@ import com.petclinic.petclinic.service.*;
 import com.petclinic.petclinic.service.map.OwnerServiceMap;
 import com.petclinic.petclinic.service.map.PetServiceMap;
 import com.petclinic.petclinic.service.map.VetServiceMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
-@Component
+@Controller
 public class DataLoder implements CommandLineRunner {
 
     private  final OwnerService ownerService;
+
     private  final VetService vetService;
 
     public DataLoder() {
@@ -24,7 +27,7 @@ public class DataLoder implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args)  {
         Owner owner1=new Owner();
         owner1.setId(1L);
         owner1.setFirstname("Mahendra kumar");

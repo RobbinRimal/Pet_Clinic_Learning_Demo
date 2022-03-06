@@ -1,5 +1,8 @@
 package com.petclinic.petclinic.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Person extends  BaseEntity{
     private  String firstname;
     private  String lastname;
