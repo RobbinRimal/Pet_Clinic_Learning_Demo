@@ -10,7 +10,7 @@ import com.petclinic.petclinic.service.map.PetServiceMap;
 import com.petclinic.petclinic.service.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+
 @Component
 public class DataLoder implements CommandLineRunner {
 
