@@ -21,13 +21,13 @@ public abstract  class AbstractMapServices<T ,ID> {
         return  new HashSet<>(map.values());
     }
     T findById(ID id){
-        return (T) map.get(id);
+        return map.get(id);
     }
 
     void deleet(T object){
         map.entrySet().removeIf(entry->entry.getValue().equals(object));
     }
-    void deleetById(ID id){map.remove(id);}
+    void deleetById(ID id){map.remove((Long) id);}
 
     T save( ID id ,T object){
         map.put((Long) id,object);
