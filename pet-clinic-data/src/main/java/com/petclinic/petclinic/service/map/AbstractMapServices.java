@@ -15,7 +15,7 @@ import java.util.Set;
 
 public abstract  class AbstractMapServices<T ,ID> {
 
-    Map<T,ID> map = new HashMap<>();
+    Map<Long,T> map = new HashMap<>();
 
     Set<T> findAll() {
         return  new HashSet<>(map.values());
@@ -30,7 +30,7 @@ public abstract  class AbstractMapServices<T ,ID> {
     void deleetById(ID id){map.remove(id);}
 
     T save( ID id ,T object){
-        map.put(object,id);
+        map.put((Long) id,object);
 
         return object;
     }
