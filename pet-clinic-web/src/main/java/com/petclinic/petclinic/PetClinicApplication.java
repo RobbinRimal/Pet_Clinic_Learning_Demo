@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("com.petclinic.petclinic.bootstrap")
+@ComponentScan("com.petclinic.petclinic.controller")
 public class PetClinicApplication {	
 
 	public static void main(String[] args) {

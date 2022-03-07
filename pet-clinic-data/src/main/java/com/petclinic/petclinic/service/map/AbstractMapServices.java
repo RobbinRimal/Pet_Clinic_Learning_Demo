@@ -1,5 +1,7 @@
 package com.petclinic.petclinic.service.map;
 
+import org.springframework.stereotype.Service;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -12,7 +14,7 @@ import java.util.Set;
     void deleet(T object);
     void deleetById(ID id);
 */
-
+@Service
 public abstract  class AbstractMapServices<T ,ID> {
 
     Map<Long,T> map = new HashMap<>();

@@ -20,10 +20,9 @@ public class DataLoder implements CommandLineRunner {
 
     private  final VetService vetService;
 
-    public DataLoder() {
-        ownerService= new OwnerServiceMap();
-        vetService = new VetServiceMap();
-        com.petclinic.petclinic.service.petService petService = new PetServiceMap();
+    public DataLoder(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
@@ -49,7 +48,7 @@ public class DataLoder implements CommandLineRunner {
 
         Vet vet2 =new Vet();
         vet2.setId(54L);
-        vet2.setLastname("kathmandu");
+        vet2.setFirstname("Kathmandu");
         vet2.setLastname("pokhrel");
         vetService.save(vet2);
         System.out.println("loding completer");
