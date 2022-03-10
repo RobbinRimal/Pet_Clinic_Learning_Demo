@@ -7,7 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class  IndexController {
     @RequestMapping({"","/","index","index.html"})
+
     public String welcomepage(){
-    return "index";
-}
+
+
+        System.out.println("fuck youu");
+        return "index";
+    }
+
 }
