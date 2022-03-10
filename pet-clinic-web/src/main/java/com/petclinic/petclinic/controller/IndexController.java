@@ -9,9 +9,6 @@ public class  IndexController {
     @RequestMapping({"","/","index","index.html"})
 
     public String welcomepage(){
-
-
-        System.out.println("fuck youu");
         return "index";
     }
 
