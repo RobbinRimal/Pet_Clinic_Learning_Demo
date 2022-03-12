@@ -1,7 +1,9 @@
 package com.petclinic.petclinic.model;
 
-import java.io.Serializable;
+import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+@Component
 public class BaseEntity implements Serializable {
     private  Long id;
 

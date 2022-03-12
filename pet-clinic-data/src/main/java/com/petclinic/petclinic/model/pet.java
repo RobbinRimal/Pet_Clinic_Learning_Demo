@@ -5,9 +5,11 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 @Component
 public class pet extends BaseEntity {
+
     private  Owner owner;
-    private petType petType;
+     private  petType petType;
     private LocalDate birthDay;
+    private  String petName;
 
     public Owner getOwner() {
         return owner;
@@ -17,11 +19,11 @@ public class pet extends BaseEntity {
         this.owner = owner;
     }
 
-    public petType getPetType() {
+    public com.petclinic.petclinic.model.petType getPetType() {
         return petType;
     }
 
-    public void setPetType(petType petType) {
+    public void setPetType(com.petclinic.petclinic.model.petType petType) {
         this.petType = petType;
     }
 
@@ -31,5 +33,13 @@ public class pet extends BaseEntity {
 
     public void setBirthDay(LocalDate birthDay) {
         this.birthDay = birthDay;
+    }
+
+    public String getPetName() {
+        return petName;
+    }
+
+    public void setPetName(String petName) {
+        this.petName = petName;
     }
 }
