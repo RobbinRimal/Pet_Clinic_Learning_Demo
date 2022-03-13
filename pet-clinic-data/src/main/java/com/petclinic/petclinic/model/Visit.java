@@ -1,7 +1,9 @@
 package com.petclinic.petclinic.model;
 
-import java.time.LocalDate;
+import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+@Component
 public class Visit extends  BaseEntity{
     private LocalDate date;
     private  pet pet;
@@ -23,11 +25,11 @@ public class Visit extends  BaseEntity{
         this.discription = discription;
     }
 
-    public com.petclinic.petclinic.model.pet getPet() {
+    public pet getPet() {
         return pet;
     }
 
-    public void setPet(com.petclinic.petclinic.model.pet pet) {
+    public void setPet(pet pet) {
         this.pet = pet;
     }
 }

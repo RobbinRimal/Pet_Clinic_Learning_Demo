@@ -1,13 +1,17 @@
 package com.petclinic.petclinic.service.map;
-
-import com.petclinic.petclinic.model.Vet;
+import com.petclinic.petclinic.model.*;
+import com.petclinic.petclinic.service.SpecilityService;
 import com.petclinic.petclinic.service.VetService;
-import com.petclinic.petclinic.service.crudService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 @Service
 public class VetServiceMap extends AbstractMapServices<Vet,Long> implements VetService {
+    SpecilityService specilityService;
+
+    public VetServiceMap(SpecilityService specilityService) {
+        this.specilityService = specilityService;
+    }
 
     @Override
     public Set<Vet> findAll() {
@@ -15,35 +19,31 @@ public class VetServiceMap extends AbstractMapServices<Vet,Long> implements VetS
     }
 
     @Override
-    public Vet save(Vet object) {
-        return super.save(object);
-    }
-
-    @Override
     public Vet findById(long ID) {
         return super.findById(ID);
     }
 
-    //@Override
-  //  public Vet findById(Long id) {
-      //  return super.findById(id);
-    //}
-
-
-
     @Override
     public void deleetById(Long id) {
-    super.deleetById(id);
+        super.deleetById(id);
     }
 
     @Override
     public void deleet(Vet object) {
-    super.deleet(object);
+    deleet(object);
     }
 
-
     @Override
-    public Vet findByLastname(String lastname) {
-        return null;
+    public Vet save(Vet object) {
+        if (object.getSpeciality().size() > 0){
+            object.getSpeciality().forEach(speciality -> {
+                if(speciality.getId() == null){
+                    Speciality savedSpecialty = specilityService.save(speciality);
+                    speciality.setId(savedSpecialty.getId());
+                }
+            });
+        }
+
+        return super.save(object);
     }
 }
