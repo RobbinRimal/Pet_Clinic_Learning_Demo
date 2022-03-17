@@ -1,5 +1,4 @@
 package com.petclinic.petclinic.controller;
-
 import com.petclinic.petclinic.service.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,4 +21,6 @@ public class OwnerController {
 
         return "owners/index.html";
     }
+
+
 }
