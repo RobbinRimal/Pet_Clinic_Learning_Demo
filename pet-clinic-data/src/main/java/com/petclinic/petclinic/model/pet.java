@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "pets")
 @Getter
@@ -22,6 +25,8 @@ public class pet extends BaseEntity {
     private LocalDate birthDay;
     @Column(name = "pet_name")
     private  String petName;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
+    private Set<Visit> visits= new HashSet<>();
 
 
 }
