@@ -1,45 +1,27 @@
 package com.petclinic.petclinic.model;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.time.LocalDate;
-@Component
+@Entity
+@Table(name = "pets")
+@Getter
+@Setter
 public class pet extends BaseEntity {
 
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
     private  Owner owner;
+    @ManyToOne()
+    @JoinColumn(name ="type_id")
      private  petType petType;
+    @Column(name = "birth_day")
     private LocalDate birthDay;
+    @Column(name = "pet_name")
     private  String petName;
 
-    public Owner getOwner() {
-        return owner;
-    }
 
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public com.petclinic.petclinic.model.petType getPetType() {
-        return petType;
-    }
-
-    public void setPetType(com.petclinic.petclinic.model.petType petType) {
-        this.petType = petType;
-    }
-
-    public LocalDate getBirthDay() {
-        return birthDay;
-    }
-
-    public void setBirthDay(LocalDate birthDay) {
-        this.birthDay = birthDay;
-    }
-
-    public String getPetName() {
-        return petName;
-    }
-
-    public void setPetName(String petName) {
-        this.petName = petName;
-    }
 }
