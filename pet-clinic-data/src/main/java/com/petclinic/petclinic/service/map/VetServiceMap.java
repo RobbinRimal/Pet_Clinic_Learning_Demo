@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 @Service
-public class VetServiceMap extends AbstractMapServices<Vet,Long> implements VetService {
+public class VetServiceMap extends AbstractServicesMap<Vet,Long> implements VetService {
     SpecilityService specilityService;
 
     public VetServiceMap(SpecilityService specilityService) {

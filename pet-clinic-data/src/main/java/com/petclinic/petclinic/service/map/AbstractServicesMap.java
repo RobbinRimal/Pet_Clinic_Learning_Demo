@@ -14,7 +14,7 @@ import java.util.*;
     void deleetById(ID id);
 */
 @Service
-public abstract  class AbstractMapServices<T extends BaseEntity,ID extends Long> {
+public abstract  class AbstractServicesMap<T extends BaseEntity,ID extends Long> {
 
     Map<Long,T> map = new HashMap<>();
 
