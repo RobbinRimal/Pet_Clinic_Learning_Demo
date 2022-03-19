@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Service
-@Profile("Spring data jpa")
+@Profile("jpa")
 public class OwnerSDjpaService implements OwnerService {
 private  final PetReposataries petReposataries;
 private  final OwnerReposataries ownerReposataries;
