@@ -5,14 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-/*Set<T> findAll();
-    Vet save(T t);
 
-
-    T findById(long ID);
-    void deleet(T object);
-    void deleetById(ID id);
-*/
 @Service
 public abstract  class AbstractServicesMap<T extends BaseEntity,ID extends Long> {
 
@@ -21,8 +14,8 @@ public abstract  class AbstractServicesMap<T extends BaseEntity,ID extends Long>
     Set<T> findAll() {
         return  new HashSet<>(map.values());
     }
-    T findById(ID id){
-        return map.get(id);
+    T findById(ID ID){
+        return map.get((Long) ID);
     }
 
 
@@ -44,7 +37,7 @@ public abstract  class AbstractServicesMap<T extends BaseEntity,ID extends Long>
         return object;
     }
 
-    private  long genNextId(){
+    private  Long genNextId(){
         Long nextID=null;
         try {
             nextID=Collections.max(map.keySet())+1;
