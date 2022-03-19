@@ -3,7 +3,6 @@ package com.petclinic.petclinic.bootstrap;
 import com.petclinic.petclinic.model.*;
 import com.petclinic.petclinic.service.*;
 import com.petclinic.petclinic.service.SpecilityService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 
@@ -11,13 +10,15 @@ import java.time.LocalDate;
 
 @Controller
 public class DataLoder implements CommandLineRunner {
+    private  final VisitService visitService;
 
     private  final OwnerService ownerService;
     private  final VetService vetService;
     private  final PetTypeService petTypeService;
     private  final SpecilityService specilityService;
 
-    public DataLoder(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecilityService specilityService) {
+    public DataLoder(VisitService visitService, OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecilityService specilityService) {
+        this.visitService = visitService;
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
@@ -76,6 +77,10 @@ public class DataLoder implements CommandLineRunner {
         rosspet.setBirthDay(LocalDate.now());
         owner1.getPets().add(rosspet);
 
+        Visit visitcat = new Visit();
+        visitcat.setPet(rosspet);
+        visitcat.setDate(LocalDate.MIN);
+        visitcat.setDiscription("she died");
 
         Vet vet1= new Vet();
         vet1.setFirstname("kashmir");
