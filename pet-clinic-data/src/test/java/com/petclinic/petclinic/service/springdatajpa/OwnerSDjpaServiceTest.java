@@ -15,6 +15,7 @@ class OwnerSDjpaServiceTest {
     OwnerReposataries ownerReposataries;
     PetReposataries petReposataries;
     PetTypeRepositaries petTypeRepositaries;
+    OwnerSDjpaService service_SD_JPA;
 
     @BeforeEach
     void setUp() {
