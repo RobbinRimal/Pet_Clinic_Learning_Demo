@@ -81,13 +81,15 @@ class OwnerSDjpaServiceTest {
     void deleet() {
         service_SD_JPA.deleet(return_Owner);
         verify(ownerReposataries).delete(any());
+        System.out.println("deleet is workin fine!");
 
     }
 
     @Test
     void deleetById() {
-        service_SD_JPA.deleet(return_Owner);
+        service_SD_JPA.deleetById(id);
         verify(ownerReposataries).deleteById(id);
+        System.out.println("deleet by id is workin fine!");
     }
 
     @Test
