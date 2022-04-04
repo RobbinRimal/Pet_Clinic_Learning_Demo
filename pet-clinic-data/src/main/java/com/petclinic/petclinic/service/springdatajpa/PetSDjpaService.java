@@ -12,11 +12,13 @@ import java.util.Set;
 @Service
 @Profile("jpa")
 public class PetSDjpaService  implements petService {
+
+    private  final PetReposataries petReposataries;
+
     public PetSDjpaService(PetReposataries petReposataries) {
         this.petReposataries = petReposataries;
     }
 
-    private  final PetReposataries petReposataries;
 
     @Override
     public Set<pet> findAll() {
