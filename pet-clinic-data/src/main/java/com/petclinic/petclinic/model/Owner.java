@@ -1,6 +1,8 @@
 package com.petclinic.petclinic.model;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +14,21 @@ import java.util.Set;
 @Table(name = "owners")
 @Getter
 @Setter
+
+@NoArgsConstructor
 public class Owner extends Person{
+
+
+
+    @Builder
+    public Owner(Long Id, String firstname, String lastname, String address, String city, String contactNo, Set<pet> pets) {
+        super(Id, firstname, lastname);
+        this.address = address;
+        this.city = city;
+        this.contactNo = contactNo;
+        this.pets = pets;
+    }
+
     @Column(name = "address")
     private String address;
     @Column(name = "city")

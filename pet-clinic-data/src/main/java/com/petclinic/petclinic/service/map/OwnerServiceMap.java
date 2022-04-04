@@ -10,6 +10,7 @@ import java.util.Set;
 public class OwnerServiceMap extends AbstractServicesMap<Owner,Long> implements OwnerService {
     private final PetServiceMap petService;
     private final PetTypeServiceMap petTypeService;
+
     public OwnerServiceMap(PetServiceMap petService, PetTypeServiceMap petTypeService) {
         this.petService = petService;
         this.petTypeService = petTypeService;
@@ -64,6 +65,10 @@ public class OwnerServiceMap extends AbstractServicesMap<Owner,Long> implements 
 
     @Override
     public Owner findByLastname(String lastname) {
-        return null;
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastname().equalsIgnoreCase(lastname))
+                .findFirst()
+                .orElse(null);
     }
 }
