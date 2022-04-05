@@ -1,5 +1,6 @@
 package com.petclinic.petclinic.controller;
 import com.petclinic.petclinic.service.OwnerService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,13 @@ public class OwnerController {
         model.addAttribute("owner", ownerService.findAll());
 
         return "owners/index.html";
+    }
+    @Value("Not Mapped Yet!!!")
+    private  String message;
+    @RequestMapping("/find")
+    public String findOwners(Model model) {
+        model.addAttribute("message",message);
+        return "owners/notimpl.html";
     }
 
 
